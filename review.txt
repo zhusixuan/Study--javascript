@@ -1,0 +1,591 @@
+
+html+css+js
+    
+    
+js:
+	   全称javascript
+
+
+	1.特点
+        1.弱类型语言
+            java
+            var a=10;
+            int a=10;
+
+
+        2.脚本语言
+            编译语言：
+                java
+                本身具有逻辑能力和执行能力
+                需要编译运行
+                .java--》.class
+            脚本语言：
+                js
+                console.log(1+1);
+                本身具有逻辑能力和执行能力
+
+                alert();
+            标记语言：
+                html
+                本身不具有逻辑能力和执行能力
+                需要被读取解析
+                <div>1+1</div>
+        3.解释性语言
+            需要被解析执行，解析器
+
+
+        4.顺序执行
+            从上到下一次执行
+
+
+	2.组成
+        核心js：ECMAScript 5
+            alert():弹框
+        DOM：
+            document obejct model
+            文档对象模型
+            html:
+                -->document
+                浏览器：
+                    div--》div对象
+                    p--》p对象
+                    p
+                node:
+                    解析器：核心js
+        BOM：
+            浏览器对象模型
+            方法和属性
+            alert("hello");
+
+
+
+
+
+	3.引入
+        <script>
+            标签内部js代码
+        </script>
+
+        <script src="外部引入路径">
+            //不能编写js代码，忽略不计
+        </script>
+
+        defer:
+            布尔值属性：true  false
+            defer
+
+            延迟加载:
+                延迟到dom树加载完毕之后执行脚本
+                只能用给外部引入的js文件
+
+
+	4.基础语法
+        1.注释
+            //单行注释
+            /*多行注释*/
+
+        注释不能够嵌套使用
+
+            /*
+                /*
+                */
+
+            */
+
+        <!--注释
+             <!--注释
+            
+            内容-->
+        内容-->
+
+
+        2.js区分大小写
+        3.标识符
+            变量名
+            1.只能以字母、数字、下划线以及$组成
+            2.不能以数字开头
+            3.不能以关键字或者保留字 
+            4.建议以驼峰命名
+                firstNameAgaGender  
+        4.语句
+            每一段js代码都建议大家以分号结尾
+            var a=10;
+            var b=20;
+            console.log(a,b);
+
+
+
+    5.变量
+
+        var a;
+        a=10;
+
+        var a=20;
+        a=30;
+
+    全局：
+        不适用var操作符声明的变量
+        使用var操作符，但是不声明在函数内部
+    局部
+        使用var操作符，声明在函数内部
+
+
+
+    <script>
+        var a=10;
+        function test(){
+            var b=20;
+            console.log(b);
+        }
+        console.log(b);
+        test();
+
+    </script>
+
+
+
+
+    6.数据类型
+        6种数据类型
+
+        1.参数
+        2.返回值
+
+        typeof：
+            返回当前变量的数据类型
+            返回值类型：string
+            返回值：
+                number
+                string
+                undefined
+                obejct
+                function
+                boolean
+
+            var a=10;
+            typeof a
+            typeof(a);
+
+            -->
+                number
+
+
+        1种引用数据类型：复杂数据类型
+            Obejct：
+                constructor
+                toString():
+
+                valueOf():
+                    arr-->
+                    function()-->
+                    date-->
+
+
+        5中基本数据类型：简单数据类型
+            null:空引用数据类型
+            undefiend:
+                var a;
+                var a=undefiend;
+                a-->报错
+                    undefined
+                null==undefined--》true
+                null===undefiend--》false
+                null派生自undeinfed
+
+            number:
+                所有数值类型均属于number
+                10
+
+                NaN:
+                    not a number
+                    var result=10/"hello";-->nan
+                typeof NaN-->number
+                isNaN(a);
+            boolean:
+                true
+                false
+            string:
+                "" ''
+                \t
+                ....
+
+
+
+    7.数据类型转换
+        null undefined  object
+
+
+        1.其他数据类型转换为Boolean
+            Boolean转换函数
+            Boolean()
+
+
+            var a=10;
+           var result= Boolean(a)
+
+           var result1= new Boolean(a);
+           //new Object()
+           //new -->在堆区中新创建了一块内存空间
+
+        2.将其他数据类型转换为Number
+            1.转换函数
+                Number()
+            2.parseInt(12.9)
+            3.parseFloat(12.3)
+            4.+
+
+        3.将其他数据类型转换为string
+            String()
+            var a=10;//new String(a)
+            var result=a.toString()//a
+            console.log(typeof a)//number
+
+            a.toString(2);//'010101' 
+
+
+    8.操作符
+        一元
+            +
+            -
+            ++
+            --
+        逻辑与
+        逻辑或
+        逻辑非
+            !
+            !!-->Boolean()
+
+        三目：
+            a>b?console.log(a):console.log(b)
+        加性：
+            a+b
+            a:string
+            a:{}
+        乘性：
+            *
+            /
+            %
+            *=
+            /=
+        全等和等等
+            ===
+            ==
+            10>{
+                    toString
+                    valueOf()
+                } 
+            如果其中一方为对象，默认调用toString(),只重写toString(),此时调用toString，只重写valueOf(),调用valueOf(),如果都重写，默认调用valueOf()
+
+            <
+
+
+        赋值：
+            =
+            从右向左
+            +=:a+=1:a=a+1
+            -=
+            *=
+            /=
+
+
+
+        var a=10;
+        a=b;
+        console.log(a);
+        console.log(b);
+
+    9.流程&循环语句
+        if()else{}
+
+        if(a>b){}
+
+
+        key===value
+        swicth(key){
+            case value:
+            default:
+
+        }
+
+        break:
+            跳出当前循环
+        continue:
+            跳出本次循环
+        label:
+
+
+        for(初始条件;结束条件;迭代条件){
+
+        }
+        for(;;){}
+        while(true){}
+
+        while(){}
+        do{}while()
+
+        for in
+            for(var key in obj){
+                obj[key]
+            }
+        with(obj){
+            console.log(name);
+        }
+
+
+
+    10.函数
+        1.对象
+            var obj={
+                name:"llisi",
+                age:12
+            }
+            var obj=new Object();
+
+            obj.name="lisi"
+
+            obj.name
+            obj["name"]
+
+            obj[key]
+
+            "toString" in obj
+
+            delete obj.age
+
+
+        2.函数
+            声明：
+                var test=function(形参){}
+
+                test(实参);
+
+                function test(){}
+
+            解析顺序：
+                优先解析函数的声明，其次解析使用var声明的变量
+
+            js没有重载概念，只有重写
+
+
+        函数的调用：
+            函数名(实参列表)
+            函数名.call(this,实参列表)
+            函数名.apply(this,[实参列表])
+
+        函数内部属性：
+
+            function test(){
+                console.log(arguments.callee);
+            }
+            function test1(){
+                console.log(arguments.callee);
+            }
+
+
+            arguments：
+                类数组对象
+                实参
+                    callee：
+                        指向当前包含arguments的函数
+            this:
+                函数赖以执行的环境对象
+                拥有当前this的函数，谁调用，this指向谁
+
+        基本数据类型和引用数据类型值传递：
+            基本数据类型值传递：值本身
+            引用数据类型值传递：引用地址
+
+
+        函数属性:
+            length:
+                指向当前函数形参
+            prototype:
+                指向函数的原型对象
+                存档所有实例对象共有的属性和方法
+
+            每一个函数都有一个原型对象
+            每一个对象都有一个constructor属性
+
+        every
+        some
+        forEach()
+        myForch()
+
+        arr.myForeach(function(item,index){
+            console.log(item,index);
+        });
+
+
+
+    11.数组
+        var arr=[1,"hello",true,{},ufnction(){}];
+
+        var arr=new Array(10,12,"hello");
+
+        arr[5]="hello";
+        arr.length=3;
+
+        Array.isArray();
+            arr.isArray();
+
+
+        push
+        pop
+        unshift
+        shift
+        sort():
+        var arr=[1,2,3,4,5];
+            默认每个元素调用toString()
+            funciton(a,b){
+                if(a<b){
+                    return 1
+                }
+                return  +1
+                        -1
+                        0
+            }
+
+        reverse():
+            翻转数组
+            返回值：
+                翻转后的数组
+            是否改变原数组？
+            var arr=[1,2,3,4];
+            var result=arr.reverse();
+            console.log(arr);
+
+
+        idnexOf()
+        lastIndexOf()
+        concat()
+        slice():
+            切割数组
+            返回值：
+            是否改变原数组：
+            0:原数组
+            1：返回当前位置到数组末尾
+            2：开始位置  结束位置-1代表数组最后一个
+
+        splice:
+            0:空数组
+            1：
+
+        迭代：
+
+            every
+            some
+            map
+            filter
+            forEach：
+                itme index arr
+
+
+
+        forEach():
+            参数：
+                handler this
+                handler：
+                    参数：
+                        item index arr
+
+        var arr=[1,2,3,4,5];
+
+        arr.forEach(function(){},this);
+
+    12.包装器
+        Boolean
+        Number
+        String
+
+        new Number()
+
+        自动装箱
+        自动拆箱
+
+        var str="hello";
+            console.log(typeof str);
+        var length=str.length;
+        console.log( typeof str);
+        console.log(str);
+
+
+
+
+
+
+    13.Math 和 Date
+
+
+        Math:
+            不是构造函数
+            abs()
+            ceil()
+            floor()
+            round()
+            random()
+
+        Date:
+           var now= new Date();
+            now.toString()
+            now.valueOf()
+
+            now.getTime()
+            now.getDate()
+            now.getDay()
+            now.getMonth()
+            now.getFullYear()
+
+15.面向对象
+    var stu1={
+        name:'lisi',
+        age:12,
+        gender:"men",
+        id:1001
+    }
+
+   1.工厂模式
+    function factory(name,age,id,gender){
+        var o=new Obejct();
+        o.name=name;
+        o.sayName=function(){}
+    }
+    var stu1=factory("lisi",12,"men",1001);
+    stu1.sayName()
+
+    var stu2=factory("lisi",21,"men",1001);
+
+    stu2.sayName()
+
+    console.log(stu1.sayName==stu2.sayName);
+
+    1.所有对象不能细分
+        Obejct
+
+    2.浪费内存
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
